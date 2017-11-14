@@ -16,10 +16,11 @@ public class heapSort{
 		//heapsort 堆排序
 		int tmp;
 		for(int i=A.length;i>1;i--){
+			//交换堆头和堆尾元素，并将堆的长度减一
 			tmp=A[0];
 			A[0]=A[i-1];
 			A[i-1]=tmp;
-			max_heapify(A,1,i-1);
+			max_heapify(A,1,i-1); 
 		}
 	}
 	private static void max_heapify(int[] A, int i, int heapSize){
@@ -32,7 +33,7 @@ public class heapSort{
 		if(r<=heapSize && A[r-1]>A[largest-1])
 			largest=r;
 		if(largest!=i){
-			//交换A[i-1]与A[largest-1]
+			//交换堆中第i个元素和第largest个元素
 			int tmp=A[i-1];
 			A[i-1]=A[largest-1];
 			A[largest-1]=tmp;
